@@ -1,2 +1,0 @@
-# prodigious-challenges
-Backbone, handlebars
