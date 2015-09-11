@@ -1,0 +1,6 @@
+<h1>Hola login</h1>
+<form id="login">
+	<input type="text" name=userEmail value="{{userEmail}}">
+	<input type="text" name=userPassword value="{{password}}">
+	<button>Login</button>
+</form>

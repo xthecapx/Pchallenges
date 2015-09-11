@@ -1,0 +1,6 @@
+<h1>Hola singUp</h1>
+<form id="singUp">
+	<input type="text" name=userEmail value="{{userEmail}}">
+	<input type="text" name=userPassword value="{{password}}">
+	<button>Sign Up!</button>
+</form>

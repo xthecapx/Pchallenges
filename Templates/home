@@ -1,3 +1,9 @@
 <h3>{{name}}</h3>
 <p>{{comments}}</p>
-<a href="help">help</a>
+
+{{#if currentUser}}
+	<a href="#" id="logout">Logout</a>
+{{/if}}
+
+<a href="login">Login</a>
+<a href="singUp">Signing Up</a>

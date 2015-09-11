@@ -3,6 +3,8 @@ App.Router = Backbone.Router.extend({
 		'(index)': 'index',
 		'help': 'help',
 		'home': 'home',
+		'singUp': 'singUp',
+		'login': 'login',
 		'*path': 'notFound'
 	},
 	index: function() {
@@ -17,8 +19,16 @@ App.Router = Backbone.Router.extend({
 		console.log('home');
 		alert('home');
 	},
+	singUp: function() {
+		console.log('singUp');
+		App.Views.singUpView.render();
+	},
+	login: function() {
+		console.log('login');
+		App.Views.loginView.render();
+	},
 	notFound: function () {
 		console.log('not Found');
 		alert('not Found');
-	}
+	},
 });
