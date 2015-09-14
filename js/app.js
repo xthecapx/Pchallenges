@@ -2,39 +2,34 @@ var App = new (Backbone.View.extend({
     Models : {},
     Views: {},
     Collections: {},
+    Helpers: {},
     events: {
        'click a': function(e) {
         	e.preventDefault();
-        	console.log('click on a');
-        	console.log(e);
-        	console.log(e.target.pathname);
+        	console.log('Navegando a ' + e.target.pathname);
         	Backbone.history.navigate(e.target.pathname, true);
        },
-       'click a#logout': function() {
-            console.log('click on logout');
-       }
+       'click a#logOut': 'logOut'
     },
-    start: function() {
-    	this.Router = new App.Router();
-    	Backbone.history.start({pushState: true, root: 'challenge'});
+    start: function() {      
+    	//Initialize the router
+        this.Router = new App.Router();
+    	Backbone.history.start({pushState: true , root: 'challenge'});
+        
+        //Initiatilize the Parse API
         Parse.initialize("O6GZ0PV5nygFuaEHk25h6lu19PiSKKWE4XfRyJVM", "APhJ03XQs4wek1T8TlWiZm4B4ybcBrcQ44fNv7SE");
-        currentUser = Parse.User.current() !== null;
-        //Parse.User.logOut();
+        
+        //Setting the current user in ther Model
+        App.Models.home.set({currentUser: Parse.User.current() !== null });
+
     },
-    template: _.template('<h1>This is my Challenge, Cristian Marquez!</h1>'),
-    render: function () {
-    	this.$el.html(this.template());
+    logOut: function () {
+        Parse.User.logOut();
+        App.Models.home.set({currentUser: Parse.User.current() !== null });
     }
 }))({el: document.body});
 
+//Starting the App
 $(function() {
-	App.render(); 
 	App.start();
-    var currentUser = App.currentUser;
-});
-
-Handlebars.registerHelper('if', function(conditional, options) {
-  if(conditional) {
-    return options.fn(this);
-  }
 });

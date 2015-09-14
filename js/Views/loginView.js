@@ -10,8 +10,9 @@ App.Views.loginView = new (Backbone.View.extend({
 	},
 	
 	render: function(){
-		var template = Handlebars.templates['login'];
+		var template = Handlebars.templates['login.hdb'];
 		this.$el.html(template(this.model.toJSON()));
+		this.$(".error").hide();
     },
 
     events: {
@@ -23,23 +24,7 @@ App.Views.loginView = new (Backbone.View.extend({
 	},
 
 	login: function(e) {
-		e.preventDefault();
-    	var userEmail = this.$('input[name=userEmail]').val();
-    	var userPassword = this.$('input[name=userPassword]').val();
-
-    	console.log(userPassword + ' ' + userEmail);
-
-    	Parse.User.logIn(userEmail, userPassword, {
-			success: function(user) {
-			// Do stuff after successful login.
-			currentUser = true;
-			Backbone.history.navigate('/', true);
-			},
-			error: function(user, error) {
-	   		// The login failed. Check error to see why.
-	   		alert("Error: " + error.code + " " + error.message);
-			}
-		});
+		App.Helpers.loginApp(e, this);
 	}
 
 }));

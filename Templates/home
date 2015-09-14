@@ -1,9 +1,0 @@
-<h3>{{name}}</h3>
-<p>{{comments}}</p>
-
-{{#if currentUser}}
-	<a href="#" id="logout">Logout</a>
-{{/if}}
-
-<a href="login">Login</a>
-<a href="singUp">Signing Up</a>

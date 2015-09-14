@@ -1,30 +1,20 @@
 App.Router = Backbone.Router.extend({
 	routes: {
-		'(index)': 'index',
-		'help': 'help',
-		'home': 'home',
+		'(/)': 'home',
 		'singUp': 'singUp',
 		'login': 'login',
 		'*path': 'notFound'
 	},
-	index: function() {
-		console.log('index');
-		App.Views.patientView.render();
-	},
-	help: function() {
-		console.log('help');
-		alert('help');
-	},
 	home: function () {
 		console.log('home');
-		alert('home');
+		App.Views.homeView.render();
 	},
 	singUp: function() {
 		console.log('singUp');
 		App.Views.singUpView.render();
 	},
 	login: function() {
-		console.log('login');
+		console.log('Render /login');
 		App.Views.loginView.render();
 	},
 	notFound: function () {
