@@ -45,3 +45,66 @@ App.Helpers.signUp = function(e, context) {
       }
     });
 };
+
+App.Helpers.setTimer = {
+
+    bigTime: 1499, // 25 seconds
+
+    mins: 25,
+    secs: 0,
+    countdownID: '',
+    counter: function() {
+
+        this.mins = Math.floor(this.bigTime / 60);
+        this.secs = this.bigTime - this.mins * 60;
+    
+        if (this.bigTime == 0) {
+            clearInterval(this.countdownID);
+        } else {
+            this.bigTime = this.bigTime - 1;
+            //console.log(this.mins + ':' + this.secs);
+            //Update timers in the Home View
+            App.Models.home.set({ 
+                mins: App.Helpers.setTimer.mins, 
+                secs: App.Helpers.setTimer.secs, 
+                bigTime: App.Helpers.setTimer.bigTime});
+        }       
+    },
+
+    startTimer: function() {
+        var self = this;
+        this.countdownID = setInterval( function() { self.counter();}, 1000);
+    },
+
+    stopTimer: function() {
+        clearInterval(this.countdownID);
+    },
+
+    resetTimer: function() {
+        this.bigTime = 1499;
+        App.Models.home.set({ 
+            mins: 25, 
+            secs: 0, 
+            bigTime: App.Helpers.setTimer.bigTime});
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

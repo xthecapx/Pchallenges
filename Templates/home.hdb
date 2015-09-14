@@ -4,5 +4,12 @@
 	{{/if}}
 	<ul><li><a href="login">Login</a></li></ul>
 	<ul><li><a href="singUp">Signing Up</a></li></ul>
+	<ul><li><a id="timer">Timer</a></li></ul>
+	<ul><li><a id="stop">Stop</a></li></ul>
+	<ul><li><a id="reset">Reset</a></li></ul>
 </nav>
+
+<div class="clock">
+	<p>{{mins}} : {{secs}}</p>
+</div>
 

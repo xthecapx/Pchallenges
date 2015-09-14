@@ -7,7 +7,7 @@ App.Router = Backbone.Router.extend({
 	},
 	home: function () {
 		console.log('home');
-		App.Views.homeView.render();
+		App.render();
 	},
 	singUp: function() {
 		console.log('singUp');

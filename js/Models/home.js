@@ -3,7 +3,10 @@ App.Models.home = new (Backbone.Model.extend({
 		return {
 			name: '',
 			comments: '',
-			currentUser: ''
+			currentUser: '',
+			min: 25,
+			sec: 0,
+			bigTime: 1499
 		};	
 	}
 }));
