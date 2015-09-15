@@ -7,7 +7,7 @@ templates['home.hdb'] = template({"1":function(container,depth0,helpers,partials
     + alias3(((helper = (helper = helpers.mins || (depth0 != null ? depth0.mins : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"mins","hash":{},"data":data}) : helper)))
     + " : "
     + alias3(((helper = (helper = helpers.secs || (depth0 != null ? depth0.secs : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"secs","hash":{},"data":data}) : helper)))
-    + "</p>\n</div>\n<div class=\"submit buttons\">\n	<button id=\"timer\">Timer</button>\n	<button id=\"stop\">Stop</button>\n	<button id=\"reset\">Reset</button>\n</div>\n";
+    + "</p>\n</div>\n<div class=\"submit buttons\">\n	<button id=\"reset\">Reset</button>\n	<button id=\"stop\">Stop</button>\n	<button id=\"timer\">Start!</button>\n</div>\n";
 },"3":function(container,depth0,helpers,partials,data) {
     return "	<h1>This is Pomodigius: a Pomodoro app for Prodigious</h1>\n	\n	<div class=\"videoWrapper\">\n    <!-- Copy & Pasted from YouTube -->\n    	<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/CT70iCaG0Gs\" frameborder=\"0\" allowfullscreen></iframe>\n	</div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

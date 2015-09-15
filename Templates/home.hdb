@@ -4,9 +4,9 @@
 	<p>{{mins}} : {{secs}}</p>
 </div>
 <div class="submit buttons">
-	<button id="timer">Timer</button>
-	<button id="stop">Stop</button>
 	<button id="reset">Reset</button>
+	<button id="stop">Stop</button>
+	<button id="timer">Start!</button>
 </div>
 {{else}}
 	<h1>This is Pomodigius: a Pomodoro app for Prodigious</h1>

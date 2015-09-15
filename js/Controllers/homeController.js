@@ -17,13 +17,11 @@ App.Controllers.homeController = {
  
         if (this.bigTime == 0) {
             if(self.rest) {
-                console.log('cuenta corta');
-                self.spawnNotification('El titulo', 'Tiempo de descanzo!');
+                self.spawnNotification('/images/icon.png','Time to rest', 'Have a good time!');
                 self.restTimer();
                 self.rest = false;
             } else {
-                console.log('Se acabo la cuenta');
-                self.spawnNotification('El titulo', 'A trabajar!');
+                self.spawnNotification('/images/icon.png','Back to work', 'Lets do something amazing!');
                 self.stopTimer();
                 self.rest = true;
                 self.resetTimer();
@@ -42,7 +40,7 @@ App.Controllers.homeController = {
     startTimer: function() {
         var self = this;
         clearInterval(self.countdownID);
-        this.countdownID = setInterval( function() { self.counter();}, 50);
+        this.countdownID = setInterval( function() { self.counter();}, 10);
     },
  
     stopTimer: function() {
@@ -64,10 +62,11 @@ App.Controllers.homeController = {
             secs: 0,
             bigTime: App.Controllers.homeController.bigTime});
     },
-    spawnNotification: function (theBody,theTitle) {
+    spawnNotification: function (theIcon, theBody,theTitle) {
         var options = {
             title: theTitle,
             body: theBody,
+            icon: theIcon
         }
         var n = new window.Notification(theTitle,options);
         setTimeout(n.close.bind(n), 4000);

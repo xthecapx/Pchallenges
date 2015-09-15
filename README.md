@@ -1,4 +1,5 @@
-# prodigious-challenges
-Backbone, handlebars
+# Pomodigious
+Use of backbone.js, jquery, handlebars.js, HTML5 notifications, CSS
 
-Add description
+# Description
+This is a pomodoro App made with backbone.
