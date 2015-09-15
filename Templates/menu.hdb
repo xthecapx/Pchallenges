@@ -1,0 +1,10 @@
+<ul>
+{{#if currentUser}}
+	<li><a id="home"><span class="icon-home"></span><div>Home</div></a></li>
+	<li><a id="logOut"><span class="icon-exit"></span><div>Log Out</div></a></li>
+{{else}}
+	<li><a id="home"><span class="icon-home"></span><div>Home</div></a></li>
+	<li><a id="login"><span class="icon-key"></span><div>Login</div></a></li>
+	<li><a id="singUp"><span class="icon-profile"></span><div>Sign up</div></a></li>
+{{/if}}
+</ul>

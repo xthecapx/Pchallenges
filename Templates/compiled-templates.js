@@ -1,1 +1,47 @@
-!function(){var n=Handlebars.template,a=Handlebars.templates=Handlebars.templates||{};a["home.hdb"]=n({1:function(n,a,l,e,s){return'	<ul><li><a id="logOut">Log Out</a></li></ul>\n'},compiler:[7,">= 4.0.0"],main:function(n,a,l,e,s){var i,t,u=l.helperMissing,r="function",o=n.escapeExpression;return"<nav>\n"+(null!=(i=l["if"].call(a,null!=a?a.currentUser:a,{name:"if",hash:{},fn:n.program(1,s,0),inverse:n.noop,data:s}))?i:"")+'	<ul><li><a href="login">Login</a></li></ul>\n	<ul><li><a href="singUp">Signing Up</a></li></ul>\n	<ul><li><a id="timer">Timer</a></li></ul>\n	<ul><li><a id="stop">Stop</a></li></ul>\n	<ul><li><a id="reset">Reset</a></li></ul>\n</nav>\n\n<div class="clock">\n	<p>'+o((t=null!=(t=l.mins||(null!=a?a.mins:a))?t:u,typeof t===r?t.call(a,{name:"mins",hash:{},data:s}):t))+" : "+o((t=null!=(t=l.secs||(null!=a?a.secs:a))?t:u,typeof t===r?t.call(a,{name:"secs",hash:{},data:s}):t))+"</p>\n</div>\n\n"},useData:!0}),a["login.hdb"]=n({compiler:[7,">= 4.0.0"],main:function(n,a,l,e,s){var i,t=l.helperMissing,u="function",r=n.escapeExpression;return'<h1>Login</h1>\n<div class="error" style="">Invalid username or password. Please try again.</div>\n<form id="login">\n	<input type="text" name=userEmail value="'+r((i=null!=(i=l.userEmail||(null!=a?a.userEmail:a))?i:t,typeof i===u?i.call(a,{name:"userEmail",hash:{},data:s}):i))+'">\n	<input type="text" name=userPassword value="'+r((i=null!=(i=l.password||(null!=a?a.password:a))?i:t,typeof i===u?i.call(a,{name:"password",hash:{},data:s}):i))+'">\n	<button>Login</button>\n</form>'},useData:!0}),a["singUp.hdb"]=n({compiler:[7,">= 4.0.0"],main:function(n,a,l,e,s){var i,t=l.helperMissing,u="function",r=n.escapeExpression;return'<h1>SingUp</h1>\n<form id="singUp">\n	<input type="text" name=userEmail value="'+r((i=null!=(i=l.userEmail||(null!=a?a.userEmail:a))?i:t,typeof i===u?i.call(a,{name:"userEmail",hash:{},data:s}):i))+'">\n	<input type="text" name=userPassword value="'+r((i=null!=(i=l.password||(null!=a?a.password:a))?i:t,typeof i===u?i.call(a,{name:"password",hash:{},data:s}):i))+'">\n	<button>Sign Up!</button>\n</form>'},useData:!0})}();
+(function() {
+  var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['home.hdb'] = template({"1":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
+
+  return "<h1>Let's Get Started</h1>\n<div class=\"clock\">\n	<p>"
+    + alias3(((helper = (helper = helpers.mins || (depth0 != null ? depth0.mins : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"mins","hash":{},"data":data}) : helper)))
+    + " : "
+    + alias3(((helper = (helper = helpers.secs || (depth0 != null ? depth0.secs : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"secs","hash":{},"data":data}) : helper)))
+    + "</p>\n</div>\n<div class=\"submit buttons\">\n	<button id=\"timer\">Timer</button>\n	<button id=\"stop\">Stop</button>\n	<button id=\"reset\">Reset</button>\n</div>\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    return "	<h1>This is Pomodigius: a Pomodoro app for Prodigious</h1>\n	\n	<div class=\"videoWrapper\">\n    <!-- Copy & Pasted from YouTube -->\n    	<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/CT70iCaG0Gs\" frameborder=\"0\" allowfullscreen></iframe>\n	</div>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.currentUser : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "");
+},"useData":true});
+templates['login.hdb'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
+
+  return "<h1>Please write your credentials</h1>\n<div class=\"error\" style=\"\">Invalid username or password. Please try again.</div>\n<form id=\"login\">\n	<input type=\"text\" name=userEmail placeholder=\"write your email\" value=\""
+    + alias3(((helper = (helper = helpers.userEmail || (depth0 != null ? depth0.userEmail : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"userEmail","hash":{},"data":data}) : helper)))
+    + "\">\n	<input type=\"password\" name=userPassword placeholder=\"write your password\" value=\""
+    + alias3(((helper = (helper = helpers.password || (depth0 != null ? depth0.password : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"password","hash":{},"data":data}) : helper)))
+    + "\">\n	<div class=\"submit\">\n    	<input type=\"submit\" value=\"Login\" />\n    <div>\n</form>";
+},"useData":true});
+templates['menu.hdb'] = template({"1":function(container,depth0,helpers,partials,data) {
+    return "	<li><a id=\"home\"><span class=\"icon-home\"></span><div>Home</div></a></li>\n	<li><a id=\"logOut\"><span class=\"icon-exit\"></span><div>Log Out</div></a></li>\n";
+},"3":function(container,depth0,helpers,partials,data) {
+    return "	<li><a id=\"home\"><span class=\"icon-home\"></span><div>Home</div></a></li>\n	<li><a id=\"login\"><span class=\"icon-key\"></span><div>Login</div></a></li>\n	<li><a id=\"singUp\"><span class=\"icon-profile\"></span><div>Sign up</div></a></li>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<ul>\n"
+    + ((stack1 = helpers["if"].call(depth0,(depth0 != null ? depth0.currentUser : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(3, data, 0),"data":data})) != null ? stack1 : "")
+    + "</ul>";
+},"useData":true});
+templates['singUp.hdb'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=container.escapeExpression;
+
+  return "<h1>Please give us the following information</h1>\n<form id=\"singUp\">\n	<input type=\"text\" name=userEmail placeholder=\"write your email\" value=\""
+    + alias3(((helper = (helper = helpers.userEmail || (depth0 != null ? depth0.userEmail : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"userEmail","hash":{},"data":data}) : helper)))
+    + "\">\n	<input type=\"password\" name=userPassword placeholder=\"write your password\" value=\""
+    + alias3(((helper = (helper = helpers.password || (depth0 != null ? depth0.password : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"password","hash":{},"data":data}) : helper)))
+    + "\">\n	<div class=\"submit\">\n    	<input type=\"submit\" value=\"Sign Up!\" />\n    <div>\n</form>\n";
+},"useData":true});
+})();

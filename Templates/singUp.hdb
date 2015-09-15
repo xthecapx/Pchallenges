@@ -1,6 +1,8 @@
-<h1>SingUp</h1>
+<h1>Please give us the following information</h1>
 <form id="singUp">
-	<input type="text" name=userEmail value="{{userEmail}}">
-	<input type="text" name=userPassword value="{{password}}">
-	<button>Sign Up!</button>
+	<input type="text" name=userEmail placeholder="write your email" value="{{userEmail}}">
+	<input type="password" name=userPassword placeholder="write your password" value="{{password}}">
+	<div class="submit">
+    	<input type="submit" value="Sign Up!" />
+    <div>
 </form>

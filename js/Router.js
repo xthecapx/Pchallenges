@@ -6,15 +6,12 @@ App.Router = Backbone.Router.extend({
 		'*path': 'notFound'
 	},
 	home: function () {
-		console.log('home');
 		App.render();
 	},
 	singUp: function() {
-		console.log('singUp');
 		App.Views.singUpView.render();
 	},
 	login: function() {
-		console.log('Render /login');
 		App.Views.loginView.render();
 	},
 	notFound: function () {

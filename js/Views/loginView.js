@@ -2,7 +2,7 @@ App.Views.loginView = new (Backbone.View.extend({
 	
 	model: new App.Models.login(),
 
-	el: $(document.body),
+	el: $('section.content'),
 
 	initialize: function(){
 		this.model.on('change', this.render, this);

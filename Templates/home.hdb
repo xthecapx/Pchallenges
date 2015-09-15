@@ -1,15 +1,18 @@
-<nav>
-	{{#if currentUser}}
-	<ul><li><a id="logOut">Log Out</a></li></ul>
-	{{/if}}
-	<ul><li><a href="login">Login</a></li></ul>
-	<ul><li><a href="singUp">Signing Up</a></li></ul>
-	<ul><li><a id="timer">Timer</a></li></ul>
-	<ul><li><a id="stop">Stop</a></li></ul>
-	<ul><li><a id="reset">Reset</a></li></ul>
-</nav>
-
+{{#if currentUser}}
+<h1>Let's Get Started</h1>
 <div class="clock">
 	<p>{{mins}} : {{secs}}</p>
 </div>
-
+<div class="submit buttons">
+	<button id="timer">Timer</button>
+	<button id="stop">Stop</button>
+	<button id="reset">Reset</button>
+</div>
+{{else}}
+	<h1>This is Pomodigius: a Pomodoro app for Prodigious</h1>
+	
+	<div class="videoWrapper">
+    <!-- Copy & Pasted from YouTube -->
+    	<iframe width="560" height="315" src="https://www.youtube.com/embed/CT70iCaG0Gs" frameborder="0" allowfullscreen></iframe>
+	</div>
+{{/if}}
