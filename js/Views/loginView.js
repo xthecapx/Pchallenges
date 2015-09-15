@@ -16,7 +16,7 @@ App.Views.loginView = new (Backbone.View.extend({
     },
 
     events: {
-    	'submit #login': 'login'
+    	'submit form.login': 'login'
     },
 	
 	remove: function() {

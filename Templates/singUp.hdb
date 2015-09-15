@@ -1,5 +1,5 @@
 <h1>Please give us the following information</h1>
-<form id="singUp">
+<form class="singUp">
 	<input type="text" name=userEmail placeholder="write your email" value="{{userEmail}}">
 	<input type="password" name=userPassword placeholder="write your password" value="{{password}}">
 	<div class="submit">

@@ -4,15 +4,14 @@
 	<p>{{mins}} : {{secs}}</p>
 </div>
 <div class="submit buttons">
-	<button id="reset">Reset</button>
-	<button id="stop">Stop</button>
-	<button id="timer">Start!</button>
+	<button class="reset">Reset</button>
+	<button class="stop">Stop</button>
+	<button class="timer">Start!</button>
 </div>
 {{else}}
 	<h1>This is Pomodigius: a Pomodoro app for Prodigious</h1>
 	
 	<div class="videoWrapper">
-    <!-- Copy & Pasted from YouTube -->
     	<iframe width="560" height="315" src="https://www.youtube.com/embed/CT70iCaG0Gs" frameborder="0" allowfullscreen></iframe>
 	</div>
 {{/if}}

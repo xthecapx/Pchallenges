@@ -4,13 +4,13 @@ var App = new (Backbone.View.extend({
     Collections: {},
     Controllers: {},
     events: {
-        'click button#stop': 'stopTimer',
-        'click button#timer': 'startTimer',
-        'click button#reset': 'resetTimer',
-        'click a#logOut': 'logOut',
-        'click a#home': function() {Backbone.history.navigate('', true);},
-        'click a#login': function() {Backbone.history.navigate('login', true);},
-        'click a#singUp': function() {Backbone.history.navigate('singUp', true);}
+        'click button.stop': 'stopTimer',
+        'click button.timer': 'startTimer',
+        'click button.reset': 'resetTimer',
+        'click a.logOut': 'logOut',
+        'click a.home': function() {Backbone.history.navigate('', true);},
+        'click a.login': function() {Backbone.history.navigate('login', true);},
+        'click a.singUp': function() {Backbone.history.navigate('singUp', true);}
  
     },
     start: function() {

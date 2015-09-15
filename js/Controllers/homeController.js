@@ -15,7 +15,7 @@ App.Controllers.homeController = {
         this.mins = Math.floor(this.bigTime / 60);
         this.secs = this.bigTime - this.mins * 60;
  
-        if (this.bigTime == 0) {
+        if (this.bigTime === 0) {
             if(self.rest) {
                 self.spawnNotification('/images/icon.png','Time to rest', 'Have a good time!');
                 self.restTimer();

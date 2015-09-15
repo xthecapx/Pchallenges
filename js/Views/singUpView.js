@@ -15,7 +15,7 @@ App.Views.singUpView = new (Backbone.View.extend({
     },
 
     events: {
-    	'submit #singUp': 'save'
+    	'submit form.singUp': 'save'
     },
 	
 	remove: function() {

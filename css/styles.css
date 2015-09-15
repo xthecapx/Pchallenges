@@ -42,14 +42,14 @@ form input {
 	border: 1px solid #8E8071;
 }
 
-.videoWrapper {
+.video-wrapper {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
 	margin: 5%;
 }
-.videoWrapper iframe {
+.video-wrapper iframe {
 	position: absolute;
 	top: 0;
 	left: 0;

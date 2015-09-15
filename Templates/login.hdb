@@ -1,6 +1,6 @@
 <h1>Please write your credentials</h1>
 <div class="error" style="">Invalid username or password. Please try again.</div>
-<form id="login">
+<form class="login">
 	<input type="text" name=userEmail placeholder="write your email" value="{{userEmail}}">
 	<input type="password" name=userPassword placeholder="write your password" value="{{password}}">
 	<div class="submit">
