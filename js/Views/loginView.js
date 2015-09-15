@@ -24,7 +24,7 @@ App.Views.loginView = new (Backbone.View.extend({
 	},
 
 	login: function(e) {
-		App.Helpers.loginApp(e, this);
+		App.Controllers.loginController(e, this);
 	}
 
 }));

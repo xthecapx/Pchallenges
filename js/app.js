@@ -2,7 +2,7 @@ var App = new (Backbone.View.extend({
     Models : {},
     Views: {},
     Collections: {},
-    Helpers: {},
+    Controllers: {},
     events: {
         'click button#stop': 'stopTimer',
         'click button#timer': 'startTimer',
@@ -18,11 +18,9 @@ var App = new (Backbone.View.extend({
         Backbone.history.start({pushState: true , root: window.location.pathname });
  
         this.Router = new App.Router();
- 
-        if (window.Notification.permission === 'default' || window.Notification.permission === 'denied') {
-        // Good to go, you can create a notification.
-            window.Notification.requestPermission(function() {});
-        }
+
+        //Check notification permissions
+        App.Controllers.homeController.checkPermissions();
  
         //Initiatilize the Parse API
         Parse.initialize("O6GZ0PV5nygFuaEHk25h6lu19PiSKKWE4XfRyJVM", "APhJ03XQs4wek1T8TlWiZm4B4ybcBrcQ44fNv7SE");
@@ -30,8 +28,8 @@ var App = new (Backbone.View.extend({
         //Setting the current user in ther Model
         App.Models.home.set({
             currentUser: Parse.User.current() !== null,
-            mins: App.Helpers.setTimer.mins,
-            secs: App.Helpers.setTimer.secs });
+            mins: App.Controllers.homeController.mins,
+            secs: App.Controllers.homeController.secs });
  
     },
     render: function(){
@@ -42,13 +40,13 @@ var App = new (Backbone.View.extend({
         App.Models.home.set({currentUser: Parse.User.current() !== null });
     },
     startTimer: function () {
-        App.Helpers.setTimer.startTimer();
+        App.Controllers.homeController.startTimer();
     },
     stopTimer: function() {
-        App.Helpers.setTimer.stopTimer();
+        App.Controllers.homeController.stopTimer();
     },
     resetTimer: function() {
-        App.Helpers.setTimer.resetTimer();
+        App.Controllers.homeController.resetTimer();
     }
 }))({el: document.body});
  

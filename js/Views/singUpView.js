@@ -23,7 +23,7 @@ App.Views.singUpView = new (Backbone.View.extend({
 	},
 
 	save: function(e) {
-		App.Helpers.signUp(e, this);
+		App.Controllers.signUpController(e, this);
 	}
 
 }));
