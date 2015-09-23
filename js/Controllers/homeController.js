@@ -40,7 +40,7 @@ App.Controllers.homeController = {
     startTimer: function() {
         var self = this;
         clearInterval(self.countdownID);
-        this.countdownID = setInterval( function() { self.counter();}, 10);
+        this.countdownID = setInterval( function() { self.counter();}, 500);
     },
  
     stopTimer: function() {
