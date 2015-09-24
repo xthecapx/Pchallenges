@@ -20,33 +20,33 @@ var App = new (Backbone.View.extend({
         this.Router = new App.Router();
 
         //Check notification permissions
-        App.Controllers.homeController.checkPermissions();
+        this.Controllers.homeController.checkPermissions();
  
         //Initiatilize the Parse API
         Parse.initialize("O6GZ0PV5nygFuaEHk25h6lu19PiSKKWE4XfRyJVM", "APhJ03XQs4wek1T8TlWiZm4B4ybcBrcQ44fNv7SE");
  
         //Setting the current user in ther Model
-        App.Models.home.set({
+        this.Models.home.set({
             currentUser: Parse.User.current() !== null,
-            mins: App.Controllers.homeController.mins,
-            secs: App.Controllers.homeController.secs });
+            mins: this.Controllers.homeController.mins,
+            secs: this.Controllers.homeController.secs });
  
     },
     render: function(){
-        App.Views.homeView.render();
+        this.Views.homeView.render();
     },
     logOut: function () {
         Parse.User.logOut();
-        App.Models.home.set({currentUser: Parse.User.current() !== null });
+        this.Models.home.set({currentUser: Parse.User.current() !== null });
     },
-    startTimer: function () {
-        App.Controllers.homeController.startTimer();
+    startTimer: function() {
+        this.Controllers.homeController.startTimer();
     },
     stopTimer: function() {
-        App.Controllers.homeController.stopTimer();
+        this.Controllers.homeController.stopTimer();
     },
     resetTimer: function() {
-        App.Controllers.homeController.resetTimer();
+        this.Controllers.homeController.resetTimer();
     }
 }))({el: document.body});
  

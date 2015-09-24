@@ -10,21 +10,19 @@ App.Controllers.homeController = {
  
     counter: function() {
  
-        var self = this;
- 
         this.mins = Math.floor(this.bigTime / 60);
         this.secs = this.bigTime - this.mins * 60;
  
         if (this.bigTime === 0) {
-            if(self.rest) {
-                self.spawnNotification('/images/icon.png','Time to rest', 'Have a good time!');
-                self.restTimer();
-                self.rest = false;
+            if(this.rest) {
+                this.spawnNotification('/images/icon.png','Time to rest', 'Have a good time!');
+                this.restTimer();
+                this.rest = false;
             } else {
-                self.spawnNotification('/images/icon.png','Back to work', 'Lets do something amazing!');
-                self.stopTimer();
-                self.rest = true;
-                self.resetTimer();
+                this.spawnNotification('/images/icon.png','Back to work', 'Lets do something amazing!');
+                this.stopTimer();
+                this.rest = true;
+                this.resetTimer();
             }
         } else {
             this.bigTime = this.bigTime - 1;
@@ -39,8 +37,8 @@ App.Controllers.homeController = {
  
     startTimer: function() {
         var self = this;
-        clearInterval(self.countdownID);
-        this.countdownID = setInterval( function() { self.counter();}, 500);
+        clearInterval(this.countdownID);
+        this.countdownID = setInterval( function() { self.counter();}, 1000);
     },
  
     stopTimer: function() {
